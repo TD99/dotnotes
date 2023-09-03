@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               x:Class="DotNotes.Popups.AddMenu">
+
+    <ScrollView>
+        <VerticalStackLayout Style="{StaticResource Key=VerticalPage}">
+            <Button x:Name="btnAdd"
+                    Text="Neue Notiz"
+                    Clicked="btnAdd_Clicked" />
+            <ListView x:Name="listViewContent"
+                      SelectionMode="Single"
+                      ItemSelected="listViewContent_ItemSelected"
+                      VerticalScrollBarVisibility="Never">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Border BackgroundColor="White"
+                                    StrokeShape="RoundRectangle 5"
+                                    Padding="15"
+                                    Margin="0, 5">
+                                <Grid RowDefinitions="Auto, Auto"
+                                      ColumnDefinitions="Auto, Auto">
+                                    <VerticalStackLayout Grid.Row="0"
+                                                         Grid.Column="1"
+                                                         VerticalOptions="Center">
+                                        <Label Text="{Binding Name}"
+                                               FontAttributes="Bold"
+                                               LineBreakMode="TailTruncation"
+                                               MaximumWidthRequest="170" />
+                                        <Label Text="{Binding Body}"
+                                               LineBreakMode="TailTruncation"
+                                               MaximumWidthRequest="170" />
+                                    </VerticalStackLayout>
+                                </Grid>
+                            </Border>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
+</toolkit:Popup>

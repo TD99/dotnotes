@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DotNotes.Views.Info"
+             Title="Info">
+    <ScrollView>
+        <VerticalStackLayout Style="{StaticResource Key=VerticalPage}">
+            <Label Text="Über .Notes"
+                   FontSize="Title"
+                   FontAttributes="Bold" />
+            <Border StrokeShape="RoundRectangle 5"
+                    Padding="5, 10"
+                    HorizontalOptions="Start">
+                <Image Source="dotnotes_banner.png"
+                       WidthRequest="127"
+                       HorizontalOptions="Start" />
+            </Border>
+            <VerticalStackLayout Style="{StaticResource Key=VerticalPageContent}">
+                <Label Text="App-Infos"
+                       FontSize="Medium" />
+                <Label x:Name="lblName"
+                       Text="Name: Unbekannt" />
+                <Label x:Name="lblNamespaceName"
+                       Text="Namespace: Unbekannt" />
+                <Label x:Name="lblVersion"
+                       Text="Version: Unbekannt" />
+                <Label Text="Release Date: 31.12.2022" />
+                <Label x:Name="lblCompany"
+                       Text="Copyright: School Solutions AG, Bern Schweiz" />
+                <Label x:Name="lblDeveloper"
+                       Text="Entwickelt von: Tim Dürr" />
+            </VerticalStackLayout>
+            <VerticalStackLayout Style="{StaticResource Key=VerticalPageContent}">
+                <Label Text="Impressum"
+                       FontSize="Medium" />
+                <Label Text="Kontaktadresse"
+                       FontSize="Micro"
+                       FontAttributes="Bold" />
+                <Label TextType="Html">
+                    <Label.Text>
+                        <![CDATA[
+                        <span>School Solutions AG</span><br />
+                        <span>Fährstraße 25</span><br />
+                        <span>3004 Bern</span><br />
+                        <span>Schweiz</span><br />
+                        <span>info@schoolsolutions.ch</span><br />
+                        <span>+41 31 345 43 34</span>
+                        ]]>
+                    </Label.Text>
+                </Label>
+                <Label Text="Vertretungsberechtigte Personen"
+                       FontSize="Micro"
+                       FontAttributes="Bold" />
+                <Label TextType="Html">
+                    <Label.Text>
+                        <![CDATA[
+                        <span>René Brandt, Geschäftsführer</span>
+                        ]]>
+                    </Label.Text>
+                </Label>
+                <Label Text="Haftungsausschluss"
+                       FontSize="Micro"
+                       FontAttributes="Bold" />
+                <Label TextType="Html">
+                    <Label.Text>
+                        <![CDATA[
+                        <span>Der Autor übernimmt keinerlei Gewähr hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der Informationen. Haftungsansprüche gegen den Autor wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen, durch Missbrauch der Verbindung oder durch technische Störungen entstanden sind, werden ausgeschlossen. Alle Angebote sind unverbindlich. Der Autor behält es sich ausdrücklich vor, Teile der Seiten oder das gesamte Angebot ohne gesonderte Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.</span>
+                        ]]>
+                    </Label.Text>
+                </Label>
+                <Label Text="Haftung für Links"
+                       FontSize="Micro"
+                       FontAttributes="Bold" />
+                <Label TextType="Html">
+                    <Label.Text>
+                        <![CDATA[
+                        <span>Verweise und Links auf Webseiten Dritter liegen ausserhalb unseres Verantwortungsbereichs Es wird jegliche Verantwortung für solche Webseiten abgelehnt. Der Zugriff und die Nutzung solcher Webseiten erfolgen auf eigene Gefahr des Nutzers oder der Nutzerin.</span>
+                        ]]>
+                    </Label.Text>
+                </Label>
+                <Label Text="Urheberrechte"
+                       FontSize="Micro"
+                       FontAttributes="Bold" />
+                <Label TextType="Html">
+                    <Label.Text>
+                        <![CDATA[
+                        <span>Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf der Website gehören ausschliesslich der Firma School Solutions AG oder den speziell genannten Rechtsinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen.</span>
+                        ]]>
+                    </Label.Text>
+                </Label>
+                <Label Text="Quelle"
+                       FontSize="Micro"
+                       FontAttributes="Bold" />
+                <Label TextType="Html">
+                    <Label.Text>
+                        <![CDATA[
+                        <span>Dieses Impressum wurde am 15.12.2022 mit dem Impressum Generator der Webdesign Agentur Webkönig erstellt. Die Agentur Webkönig übernimmt keine Haftung.</span>
+                        ]]>
+                    </Label.Text>
+                </Label>
+            </VerticalStackLayout>
+            <Button x:Name="btnReview"
+                    Text="Rezension schreiben"
+                    TextColor="#262226"
+                    Clicked="btnReview_Clicked" />
+            <Button x:Name="btnIntro"
+                    Text="Intro erneut anzeigen"
+                    TextColor="#262226"
+                    Clicked="btnIntro_Clicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

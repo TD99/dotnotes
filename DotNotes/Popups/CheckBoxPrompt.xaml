@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               x:Class="DotNotes.Popups.CheckBoxPrompt">
+
+    <ScrollView>
+        <VerticalStackLayout Style="{StaticResource Key=VerticalPage}">
+            <Label x:Name="lblTitle"
+                   FontSize="Subtitle"
+                   Padding="0"/>
+            <ListView x:Name="listViewContent"
+                      SelectionMode="None"
+                      VerticalScrollBarVisibility="Never">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid RowDefinitions="Auto, Auto"
+                                  ColumnDefinitions="Auto, Auto">
+                                <CheckBox Grid.Row="0"
+                                          Grid.Column="0"
+                                          IsChecked="{Binding IsSelected}"/>
+                                <VerticalStackLayout Grid.Row="0"
+                                                     Grid.Column="1"
+                                                     VerticalOptions="Center">
+                                    <Label Text="{Binding Name}"
+                                           FontAttributes="Bold"
+                                           LineBreakMode="TailTruncation"
+                                           MaximumWidthRequest="200" />
+                                    <Label Text="{Binding Body}"
+                                           LineBreakMode="TailTruncation"
+                                           MaximumWidthRequest="200" />
+                                </VerticalStackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <HorizontalStackLayout Spacing="15">
+                <Button x:Name="btnTrue"
+                        Text="OK"
+                        Clicked="btnTrue_Clicked" />
+                <Button x:Name="btnFalse"
+                        Text="Abbrechen"
+                        Clicked="btnFalse_Clicked" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</toolkit:Popup>
