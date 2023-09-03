@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="DotNotes.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:DotNotes"
+    xmlns:views="clr-namespace:DotNotes.Views"
+    FlyoutWidth="65"
+    FlyoutBehavior="Locked"
+    NavBarIsVisible="False">
+
+    <FlyoutItem Icon="note.png">
+        <ShellContent x:Name="menuItemHome" Route="pageHome" ContentTemplate="{DataTemplate views:Home}"/>
+    </FlyoutItem>
+
+    <MenuItem x:Name="menuItemNotesList" IconImageSource="notebook.png" Clicked="menuItemNotesList_Clicked"></MenuItem>
+
+    <FlyoutItem Icon="settings.png">
+        <ShellContent x:Name="menuItemSettings" Route="pageSettings" ContentTemplate="{DataTemplate views:Settings}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Icon="info.png">
+        <ShellContent x:Name="menuItemInfo" Route="pageInfo" ContentTemplate="{DataTemplate views:Info}"/>
+    </FlyoutItem>
+</Shell>
